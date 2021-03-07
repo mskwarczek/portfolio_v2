@@ -26,7 +26,15 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "plugins": ["prettier"],
+    "rules": {
+      "prettier/prettier": "warn"
+    }
+  },
+  "prettier": {
+    "singleQuote": true,
+    "jsxSingleQuote": true
   },
   "browserslist": {
     "production": [
@@ -39,5 +47,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint-plugin-prettier": "^3.3.1",
+    "prettier": "^2.2.1",
+    "styled-components": "^5.2.1"
   }
 }
