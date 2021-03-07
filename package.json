@@ -27,14 +27,17 @@
       "react-app",
       "react-app/jest"
     ],
-    "plugins": ["prettier"],
+    "plugins": [
+      "prettier"
+    ],
     "rules": {
       "prettier/prettier": "warn"
     }
   },
   "prettier": {
     "singleQuote": true,
-    "jsxSingleQuote": true
+    "jsxSingleQuote": true,
+    "endOfLine": "auto"
   },
   "browserslist": {
     "production": [
@@ -49,6 +52,7 @@
     ]
   },
   "devDependencies": {
+    "@types/styled-components": "^5.1.7",
     "eslint-plugin-prettier": "^3.3.1",
     "prettier": "^2.2.1",
     "styled-components": "^5.2.1"
