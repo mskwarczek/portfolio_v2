@@ -147,8 +147,8 @@ const SCanvas = styled.canvas`
   position: absolute;
   background-image: radial-gradient(
     circle,
-    #232323 0,
-    #909090 30%,
-    #dc143c 50%
+    ${(props) => props.theme.color.secondary} 0,
+    ${(props) => props.theme.color.inactive} 30%,
+    ${(props) => props.theme.color.action} 50%
   );
 `;

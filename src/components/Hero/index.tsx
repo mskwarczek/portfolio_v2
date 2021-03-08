@@ -10,10 +10,10 @@ const Hero = () => {
       <SContent className='content show'>
         <h1>
           Hello,{' '}
-          <span className='cut'>
+          <SSpan>
             I'm <span className='highlight'>Maciej Skwarczek</span>
-          </span>
-          <br className='no-xs' />
+          </SSpan>
+          <br className='no-xxs' />
           I'm a web developer
         </h1>
         <div>
@@ -36,34 +36,32 @@ const SSection = styled.section`
 `;
 
 const SContent = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  ${(props) => props.theme.mixins.absoluteCenter}
   width: 90vw;
   text-align: center;
-  color: #fff;
-  @media (max-width: 379px) {
-    .cut {
-      display: table;
-      margin: 0 auto;
-    }
+  color: ${(props) => props.theme.color.primary};
+`;
+
+const SSpan = styled.span`
+  display: table;
+  margin: 0 auto;
+  @media ${(props) => props.theme.screenSize.xs} {
+    display: initial;
   }
 `;
 
 const SButton = styled.a`
   margin: 20px 10%;
   padding: 10px;
-  // border: 2px solid $color-primary;
+  border: 2px solid ${(props) => props.theme.color.primary};
   border-radius: 10px;
-  // color: $color-primary;
+  color: ${(props) => props.theme.color.primary};
   text-decoration: none;
-  -webkit-transition: 0.2s linear;
   transition: 0.2s linear;
 
   &:hover {
     cursor: pointer;
-    // background-color: $color-highlight;
-    // border-color: $color-highlight;
+    background-color: ${(props) => props.theme.color.action};
+    border-color: ${(props) => props.theme.color.action};
   }
 `;
