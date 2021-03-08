@@ -1,13 +1,21 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { useTheme } from 'styled-components';
 
+import { ITheme } from 'styles/themes';
 import Canvas from 'components/Canvas';
+import ButtonLink from 'components/ButtonLink';
 
 const Hero = () => {
+  const theme = useTheme() as ITheme;
+
   return (
     <SSection id='hero'>
-      <Canvas fps={60} starColor='white' backgroundColor='#232323' />
-      <SContent className='content show'>
+      <Canvas
+        fps={60}
+        starColor={theme.color.primary}
+        backgroundColor={theme.color.secondary}
+      />
+      <SContent className='show'>
         <h1>
           Hello,{' '}
           <SSpan>
@@ -17,9 +25,7 @@ const Hero = () => {
           I'm a web developer
         </h1>
         <div>
-          <SButton className='button' href='#about'>
-            Check out my projects
-          </SButton>
+          <ButtonLink text='Check out my projects' link='#about' />
         </div>
       </SContent>
     </SSection>
@@ -47,21 +53,5 @@ const SSpan = styled.span`
   margin: 0 auto;
   @media ${(props) => props.theme.screenSize.xs} {
     display: initial;
-  }
-`;
-
-const SButton = styled.a`
-  margin: 20px 10%;
-  padding: 10px;
-  border: 2px solid ${(props) => props.theme.color.primary};
-  border-radius: 10px;
-  color: ${(props) => props.theme.color.primary};
-  text-decoration: none;
-  transition: 0.2s linear;
-
-  &:hover {
-    cursor: pointer;
-    background-color: ${(props) => props.theme.color.action};
-    border-color: ${(props) => props.theme.color.action};
   }
 `;

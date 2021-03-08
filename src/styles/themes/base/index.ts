@@ -3,7 +3,7 @@ const theme = {
     primary: '#FFFFFF',
     secondary: '#232323',
     action: '#DC143C',
-    icon: '#4169e1',
+    icon: '#4169E1',
     inactive: '#909090',
   },
   font: {

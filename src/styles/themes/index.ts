@@ -1,8 +1,29 @@
-import { breakpoints, screenSize } from 'styles/mediaQueries';
-import mixins from 'styles/mixins';
+import { breakpoints, screenSize, IMediaQueries } from 'styles/mediaQueries';
+import mixins, { IMixins } from 'styles/mixins';
 import base from './base';
 
-const themes = {
+export interface ITheme extends IMixins, IMediaQueries {
+  color: {
+    primary: string;
+    secondary: string;
+    action: string;
+    icon: string;
+    inactive: string;
+  };
+  font: {
+    primary: {
+      url: string;
+      family: string;
+      size: string | number;
+    };
+  };
+}
+
+interface IThemes {
+  base: ITheme;
+}
+
+const themes: IThemes = {
   base: { breakpoints, screenSize, ...base, mixins },
 };
 

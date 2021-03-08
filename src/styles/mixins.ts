@@ -1,3 +1,9 @@
+export interface IMixins {
+  mixins: {
+    absoluteCenter: string;
+  };
+}
+
 const mixins = {
   absoluteCenter: `
     position: absolute;

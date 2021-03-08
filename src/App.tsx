@@ -3,7 +3,7 @@ import { ThemeProvider } from 'styled-components';
 
 import themes from 'styles/themes';
 import getGlobalStyle from 'styles/globalStyle';
-import Hero from 'components/Hero';
+import Hero from 'sections/Hero';
 
 const App = () => {
   const changeTheme = (newTheme: 'base' = 'base') => {
